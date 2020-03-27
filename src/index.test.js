@@ -1,9 +1,6 @@
-// import {expect} from 'chai';
-import * as chai from 'chai';
+import { expect } from 'chai';
 import jsdom from 'jsdom';
 import fs from 'fs';
-
-const expect = chai.expect;
 
 describe('Our first test', () => {
   it('should pass', () => {
