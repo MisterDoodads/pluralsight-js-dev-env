@@ -1,6 +1,8 @@
-import { expect } from 'chai';
+// import { expect } from 'chai';
 import jsdom from 'jsdom';
 import fs from 'fs';
+
+const expect = require('chai').expect;
 
 describe('Our first test', () => {
   it('should pass', () => {
