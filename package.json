@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "start": "node buildScripts/srcServer.js"
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
-  "author": "Cory House",
+  "author": "Gaston",
   "license": "MIT",
   "dependencies": {
-    "jshint": "^2.11.0",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
